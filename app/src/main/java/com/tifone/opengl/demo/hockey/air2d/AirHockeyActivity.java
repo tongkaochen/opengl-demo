@@ -1,4 +1,4 @@
-package com.tifone.opengl.demo.hockey;
+package com.tifone.opengl.demo.hockey.air2d;
 
 import android.app.Activity;
 import android.app.ActivityManager;

@@ -1,4 +1,4 @@
-package com.tifone.opengl.demo.hockey;
+package com.tifone.opengl.demo.hockey.air3d;
 
 import android.content.Context;
 import android.opengl.GLES20;
@@ -6,8 +6,8 @@ import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 
 import com.tifone.opengl.demo.R;
-import com.tifone.opengl.demo.hockey.util.ShaderHelper;
-import com.tifone.opengl.demo.hockey.util.TextResourceReader;
+import com.tifone.opengl.demo.hockey.air3d.util3d.ShaderHelper3D;
+import com.tifone.opengl.demo.hockey.air3d.util3d.TextResource3DReader;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -21,7 +21,7 @@ import static com.tifone.opengl.demo.util.LoggerConfig.tlogd;
 /**
  * Create by Tifone on 2019/4/5.
  */
-public class AirHockeyRender implements GLSurfaceView.Renderer {
+public class AirHockey3DRender implements GLSurfaceView.Renderer {
 
     private static final String A_POSITION = "a_Position";
     private static final String U_COLOR = "u_Color";
@@ -100,7 +100,7 @@ public class AirHockeyRender implements GLSurfaceView.Renderer {
     };
     private int uMatrixPosition;
 
-    public AirHockeyRender(Context context) {
+    public AirHockey3DRender(Context context) {
         vertexData = ByteBuffer
                 .allocateDirect(tableVerticesWithTriangles.length * BYTES_PRE_FLOAT)
                 .order(ByteOrder.nativeOrder())
@@ -112,18 +112,18 @@ public class AirHockeyRender implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        String vertexShaderSource = TextResourceReader
+        String vertexShaderSource = TextResource3DReader
                 .readTextFileFromResource(mContext, R.raw.simple_vertex_shader);
-        String fragmentShaderSource = TextResourceReader
+        String fragmentShaderSource = TextResource3DReader
                 .readTextFileFromResource(mContext, R.raw.simple_fragment_shader);
 
         tlogd(vertexShaderSource);
         tlogd(fragmentShaderSource);
-        int vertexShader = ShaderHelper.compileVertexShader(vertexShaderSource);
-        int fragmentShader = ShaderHelper.compileFragmentShader(fragmentShaderSource);
+        int vertexShader = ShaderHelper3D.compileVertexShader(vertexShaderSource);
+        int fragmentShader = ShaderHelper3D.compileFragmentShader(fragmentShaderSource);
         tlogd("vertex shader = " + vertexShader);
         tlogd("fragment shader = " + fragmentShader);
-        program = ShaderHelper.linkProgram(vertexShader, fragmentShader);
+        program = ShaderHelper3D.linkProgram(vertexShader, fragmentShader);
 
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         GLES20.glUseProgram(program);
@@ -148,10 +148,11 @@ public class AirHockeyRender implements GLSurfaceView.Renderer {
         final float aspectRatio = width > height ? (float) width / height : (float) height / width;
         if (width > height) {
             // landscape
-            Matrix.orthoM(projectionMatrix, 0, -aspectRatio , aspectRatio, -0.75f, 0.75f, -1f, 1f);
+            Matrix.orthoM(projectionMatrix, 0, -aspectRatio , aspectRatio, -1f, 1f, -1f, 1f);
         } else {
             // Portrait or square
-            Matrix.orthoM(projectionMatrix, 0, -0.75f, 0.75f, -aspectRatio, aspectRatio, -1f, 1f);
+            Matrix.orthoM(projectionMatrix, 0, -1/aspectRatio, 1/aspectRatio,
+                    -1f, 1f, -1f, 1f);
         }
     }
 

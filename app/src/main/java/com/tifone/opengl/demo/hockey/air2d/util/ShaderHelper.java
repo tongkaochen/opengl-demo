@@ -1,8 +1,6 @@
-package com.tifone.opengl.demo.hockey.util;
+package com.tifone.opengl.demo.hockey.air2d.util;
 
 import android.opengl.GLES20;
-
-import com.tifone.opengl.demo.util.LoggerConfig;
 
 import static com.tifone.opengl.demo.util.LoggerConfig.tlogd;
 import static com.tifone.opengl.demo.util.LoggerConfig.tlogi;

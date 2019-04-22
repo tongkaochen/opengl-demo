@@ -1,4 +1,4 @@
-package com.tifone.opengl.demo.hockey.util;
+package com.tifone.opengl.demo.hockey.air2d.util;
 
 import android.content.Context;
 import android.content.res.Resources;

@@ -1,15 +1,9 @@
 package com.tifone.opengl.demo.texture;
 
-import android.content.Context;
 import android.opengl.GLES20;
 import android.util.Log;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-import static com.tifone.opengl.demo.util.LoggerConfig.tlogd;
+import static com.tifone.opengl.demo.common.util.LoggerConfig.tlogd;
 
 public class TextureShaderHelper {
 

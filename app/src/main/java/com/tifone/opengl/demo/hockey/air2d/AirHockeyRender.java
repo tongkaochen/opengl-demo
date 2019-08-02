@@ -16,7 +16,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import static com.tifone.opengl.demo.util.LoggerConfig.tlogd;
+import static com.tifone.opengl.demo.common.util.LoggerConfig.tlogd;
 
 /**
  * Create by Tifone on 2019/4/5.
@@ -138,7 +138,8 @@ public class AirHockeyRender implements GLSurfaceView.Renderer {
         GLES20.glEnableVertexAttribArray(aPositionLocation);
         vertexData.position(POSITION_COMPONENT_COUNT);
         aColorLocation = GLES20.glGetAttribLocation(program, A_COLOR);
-        GLES20.glVertexAttribPointer(aColorLocation, COLOR_COMPONENT_COUNT, GLES20.GL_FLOAT, false, STRIDE, vertexData);
+        GLES20.glVertexAttribPointer(aColorLocation, COLOR_COMPONENT_COUNT,
+                GLES20.GL_FLOAT, false, STRIDE, vertexData);
         GLES20.glEnableVertexAttribArray(aColorLocation);
     }
 

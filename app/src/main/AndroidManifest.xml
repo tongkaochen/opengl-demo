@@ -10,7 +10,7 @@
         android:hardwareAccelerated="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".entry.EntryActivity">
+        <activity android:name=".OpenGLDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,6 +19,7 @@
         <activity android:name=".FirstOpenGLDemoActivity" />
         <activity android:name=".hockey.air2d.AirHockeyActivity" />
         <activity android:name=".texture.TextureDemoActivity" />
+        <activity android:name=".entry.EntryActivity" />
     </application>
 
 </manifest>

@@ -2,9 +2,9 @@ package com.tifone.opengl.demo.hockey.air3d.util3d;
 
 import android.opengl.GLES20;
 
-import static com.tifone.opengl.demo.util.LoggerConfig.tlogd;
-import static com.tifone.opengl.demo.util.LoggerConfig.tlogi;
-import static com.tifone.opengl.demo.util.LoggerConfig.tlogw;
+import static com.tifone.opengl.demo.common.util.LoggerConfig.tlogd;
+import static com.tifone.opengl.demo.common.util.LoggerConfig.tlogi;
+import static com.tifone.opengl.demo.common.util.LoggerConfig.tlogw;
 
 /**
  * Create by Tifone on 2019/4/6.

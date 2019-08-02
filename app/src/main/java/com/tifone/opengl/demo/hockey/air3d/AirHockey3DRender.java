@@ -16,7 +16,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import static com.tifone.opengl.demo.util.LoggerConfig.tlogd;
+import static com.tifone.opengl.demo.common.util.LoggerConfig.tlogd;
 
 /**
  * Create by Tifone on 2019/4/5.

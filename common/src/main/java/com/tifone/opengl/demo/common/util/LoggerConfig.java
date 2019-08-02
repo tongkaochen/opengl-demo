@@ -1,4 +1,4 @@
-package com.tifone.opengl.demo.util;
+package com.tifone.opengl.demo.common.util;
 
 import android.util.Log;
 
